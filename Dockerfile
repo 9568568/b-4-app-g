@@ -10,8 +10,8 @@ RUN apt-get update &&\
     npm install -g npm &&\
     npm cache clean -f  &&\
     npm install -g n  &&\
-    n stable  &&\
-    npm install -r package.json &&\
+    n stable
+RUN npm install -r package.json &&\
     npm install -g pm2 &&\
     wget -O cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb &&\
     dpkg -i cloudflared.deb &&\
