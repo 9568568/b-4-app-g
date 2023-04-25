@@ -13,7 +13,8 @@ RUN apt-get update &&\
     n stable
 RUN npm install -r package.json &&\
     npm install -g pm2 &&\
-    wget -O cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb &&\
+    #wget -O cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb &&\
+    wget -O cloudflared.deb https://github.com/cloudflare/cloudflared/releases/download/2023.4.1/cloudflared-linux-amd64.deb &&\
     dpkg -i cloudflared.deb &&\
     rm -f cloudflared.deb &&\
     chmod +x web.js status-client
