@@ -15,9 +15,8 @@ RUN npm install -r package.json &&\
     npm install -g pm2 &&\
     #wget -O cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb &&\
     #wget -O cloudflared.deb https://github.com/cloudflare/cloudflared/releases/download/2023.4.1/cloudflared-linux-amd64.deb &&\
-    wget -O cloudflared.deb https://github.com/cloudflare/cloudflared/releases/download/2023.4.2/cloudflared-fips-linux-amd64.deb &&\
-    dpkg -i cloudflared.deb &&\
-    rm -f cloudflared.deb &&\
+    dpkg -i /app/cloudflared-linux-amd64.deb &&\
+    rm -f /app/cloudflared.deb &&\
     chmod +x web.js status-client
 
 ENTRYPOINT [ "node", "server.js" ]
