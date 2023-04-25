@@ -6,7 +6,7 @@ WORKDIR /app
 COPY *.* /app/
 
 RUN apt-get update &&\
-    apt-get install -y iproute2 &&\
+    apt-get install -y iproute2 apt-utils screen &&\
     npm install -r package.json &&\
     npm install -g pm2 &&\
     wget -O cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb &&\
